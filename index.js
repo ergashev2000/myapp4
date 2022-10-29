@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
  
 app.get('/', (req, res) => {
-  req.send('public/index.html')
   res
     .status(200)
     .send('Hello server is running')
