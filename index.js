@@ -10,13 +10,14 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
-})
+app.get('/', (req, res) => {
+    res.sendFile('public/index.html', {root: __dirname});
+});
 
  
 // Start the server
 const PORT = process.env.PORT || 8080;
+
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
