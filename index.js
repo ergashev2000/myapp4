@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
  
+
 app.get('/', (req, res) => {
   res
     .status(200)
@@ -8,6 +9,10 @@ app.get('/', (req, res) => {
     .end();
 });
 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
 
  
 // Start the server
